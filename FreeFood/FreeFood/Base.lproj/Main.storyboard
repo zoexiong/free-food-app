@@ -23,7 +23,16 @@
                                     <frame key="frameInset" width="375" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IpE-J1-3Bz"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IpE-J1-3Bz">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="CWw-L1-rEB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-bu-bVz">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="49" id="Nkb-gd-rVd"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7T-ft-d77">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,11 +41,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IpE-J1-3Bz" firstAttribute="leading" secondItem="gkM-aj-ivx" secondAttribute="leading" id="MUn-iy-LCW"/>
-                                        <constraint firstItem="k7T-ft-d77" firstAttribute="top" secondItem="IpE-J1-3Bz" secondAttribute="bottom" constant="8" id="VLj-pU-7gX"/>
+                                        <constraint firstItem="BkB-bu-bVz" firstAttribute="leading" secondItem="gkM-aj-ivx" secondAttribute="leading" id="UKd-lM-ivk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="k7T-ft-d77" secondAttribute="bottom" constant="8" id="bGw-nf-x8q"/>
+                                        <constraint firstAttribute="bottom" secondItem="BkB-bu-bVz" secondAttribute="bottom" id="jH4-NN-LhH"/>
                                         <constraint firstAttribute="trailing" secondItem="IpE-J1-3Bz" secondAttribute="trailing" id="kUg-aM-yJk"/>
-                                        <constraint firstItem="IpE-J1-3Bz" firstAttribute="top" secondItem="gkM-aj-ivx" secondAttribute="top" id="lDa-II-J1e"/>
+                                        <constraint firstItem="IpE-J1-3Bz" firstAttribute="centerX" secondItem="gkM-aj-ivx" secondAttribute="centerX" id="pjm-ZU-A8k"/>
+                                        <constraint firstItem="IpE-J1-3Bz" firstAttribute="centerY" secondItem="gkM-aj-ivx" secondAttribute="centerY" id="r6m-q9-cCa"/>
                                         <constraint firstItem="k7T-ft-d77" firstAttribute="leading" secondItem="gkM-aj-ivx" secondAttribute="leading" constant="8" id="sra-Kz-wjN"/>
-                                        <constraint firstAttribute="bottom" secondItem="IpE-J1-3Bz" secondAttribute="bottom" constant="50" id="zt6-xT-LhQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="BkB-bu-bVz" secondAttribute="trailing" id="vrF-qa-3aP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -200,4 +212,7 @@
             <point key="canvasLocation" x="629" y="1242"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Overlay" width="375" height="49"/>
+    </resources>
 </document>
