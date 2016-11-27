@@ -8,10 +8,29 @@
 
 import UIKit
 
+class Food {
+    var foodName:String
+    var foodImage:UIImage
+    init(foodName:String, foodImage:UIImage){
+        self.foodImage=foodImage
+        self.foodName=foodName
+    }
+}
+
 class FoodsTableViewController: UITableViewController {
+    
+    var foods=[Food]()
+    func loadData(){
+        let pizza = Food(foodName: "Pizza", foodImage: #imageLiteral(resourceName: "Pizza"))
+        foods += [pizza]
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +48,23 @@ class FoodsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return foods.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as! FoodTableViewCell
+        let food = foods[indexPath.row]
+        cell.foodImage.image = food.foodImage
+        cell.foodName.text = food.foodName
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
