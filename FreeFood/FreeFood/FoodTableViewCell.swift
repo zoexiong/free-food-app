@@ -9,6 +9,10 @@
 import UIKit
 
 class FoodTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var foodImage: UIImageView!
+    
+    @IBOutlet weak var foodName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

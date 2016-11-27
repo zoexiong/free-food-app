@@ -19,9 +19,29 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nCe-7v-ZKd" id="gkM-aj-ivx">
-                                    <frame key="frameInset" width="375" height="149.5"/>
+                                    <frame key="frameInset" width="375" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IpE-J1-3Bz"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7T-ft-d77">
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IpE-J1-3Bz" firstAttribute="leading" secondItem="gkM-aj-ivx" secondAttribute="leading" id="MUn-iy-LCW"/>
+                                        <constraint firstItem="k7T-ft-d77" firstAttribute="top" secondItem="IpE-J1-3Bz" secondAttribute="bottom" constant="8" id="VLj-pU-7gX"/>
+                                        <constraint firstAttribute="trailing" secondItem="IpE-J1-3Bz" secondAttribute="trailing" id="kUg-aM-yJk"/>
+                                        <constraint firstItem="IpE-J1-3Bz" firstAttribute="top" secondItem="gkM-aj-ivx" secondAttribute="top" id="lDa-II-J1e"/>
+                                        <constraint firstItem="k7T-ft-d77" firstAttribute="leading" secondItem="gkM-aj-ivx" secondAttribute="leading" constant="8" id="sra-Kz-wjN"/>
+                                        <constraint firstAttribute="bottom" secondItem="IpE-J1-3Bz" secondAttribute="bottom" constant="50" id="zt6-xT-LhQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="foodImage" destination="IpE-J1-3Bz" id="6ns-0V-JzJ"/>
+                                    <outlet property="foodName" destination="k7T-ft-d77" id="ygl-hz-VJu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +53,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbR-5U-KFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-783"/>
+            <point key="canvasLocation" x="560.79999999999995" y="-783.05847076461771"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yu7-CQ-B9Q">
