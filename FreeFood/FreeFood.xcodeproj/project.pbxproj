@@ -437,6 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J8HX8W773Z;
 				INFOPLIST_FILE = FreeFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foodies.FreeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J8HX8W773Z;
 				INFOPLIST_FILE = FreeFood/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foodies.FreeFood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -534,6 +536,7 @@
 				B628D3BB1DEB84EA0024A819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B628D3BC1DEB84EA0024A819 /* Build configuration list for PBXNativeTarget "FreeFoodTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +545,7 @@
 				B628D3BE1DEB84EA0024A819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B628D3BF1DEB84EA0024A819 /* Build configuration list for PBXNativeTarget "FreeFoodUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +554,7 @@
 				B628D3C11DEB84EA0024A819 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

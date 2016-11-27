@@ -22,7 +22,8 @@ class FoodsTableViewController: UITableViewController {
     var foods=[Food]()
     func loadData(){
         let pizza = Food(foodName: "Pizza", foodImage: #imageLiteral(resourceName: "Pizza"))
-        foods += [pizza]
+        let sandwich = Food(foodName: "Sandwich", foodImage: #imageLiteral(resourceName: "Sandwich"))
+        foods += [pizza, sandwich]
     }
     
 
