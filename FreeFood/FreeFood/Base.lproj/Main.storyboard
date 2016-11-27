@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ppr-ie-97x">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,7 +61,7 @@
                             <outlet property="delegate" destination="yAO-1Z-VJS" id="PuQ-gJ-hdZ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Foods" id="jfT-rD-UTq"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="Food" id="jfT-rD-UTq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbR-5U-KFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,10 +119,17 @@
                             <constraint firstItem="a9N-2j-1Zk" firstAttribute="leading" secondItem="xTv-0T-mDj" secondAttribute="leadingMargin" constant="8" id="pmE-79-qov"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventDescription" destination="igt-RO-bga" id="RZM-UG-kuj"/>
+                        <outlet property="eventFoods" destination="6Tf-FU-pbF" id="3QQ-rr-BCa"/>
+                        <outlet property="eventLocation" destination="a9N-2j-1Zk" id="zeG-qd-PVs"/>
+                        <outlet property="eventTime" destination="ZCm-Xj-MMI" id="DkJ-A4-uDY"/>
+                        <outlet property="eventTitle" destination="gRV-RM-aUF" id="cBy-JJ-TvR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NoD-TI-e7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="-539.28035982008998"/>
+            <point key="canvasLocation" x="1410" y="-541"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yu7-CQ-B9Q">
@@ -207,7 +213,7 @@
                             <outlet property="delegate" destination="4Yk-J2-yNc" id="VQF-75-Sfd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Events" id="Ojg-df-KEd"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Time" id="Ojg-df-KEd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGs-Tm-5nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,7 +232,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Post Event" id="4vY-Xy-x9q"/>
+                    <tabBarItem key="tabBarItem" title="Post Event" image="Post" id="4vY-Xy-x9q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVv-qw-tkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,7 +251,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" id="VMO-cF-EhJ"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="VMO-cF-EhJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfq-Rn-yin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,6 +259,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Food" width="18" height="20"/>
         <image name="Overlay" width="375" height="49"/>
+        <image name="Post" width="20" height="20"/>
+        <image name="Setting" width="20" height="20"/>
+        <image name="Time" width="18" height="18"/>
     </resources>
 </document>

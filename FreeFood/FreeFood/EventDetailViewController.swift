@@ -9,7 +9,15 @@
 import UIKit
 
 class EventDetailViewController: UIViewController {
+    @IBOutlet weak var eventTitle: UILabel!
 
+    @IBOutlet weak var eventFoods: UILabel!
+    
+    @IBOutlet weak var eventTime: UILabel!
+    
+    @IBOutlet weak var eventLocation: UILabel!
+    
+    @IBOutlet weak var eventDescription: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
