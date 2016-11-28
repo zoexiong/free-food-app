@@ -228,8 +228,8 @@
                     <connections>
                         <segue destination="yAO-1Z-VJS" kind="relationship" relationship="viewControllers" id="gXb-OG-EAE"/>
                         <segue destination="4Yk-J2-yNc" kind="relationship" relationship="viewControllers" id="U9G-Fj-kbK"/>
-                        <segue destination="Tuj-xB-qMJ" kind="relationship" relationship="viewControllers" id="7Ui-z6-Fzk"/>
-                        <segue destination="5xM-RR-wKk" kind="relationship" relationship="viewControllers" id="Tie-KY-jCV"/>
+                        <segue destination="Tuj-xB-qMJ" kind="relationship" relationship="viewControllers" id="QUz-ay-Bvn"/>
+                        <segue destination="5xM-RR-wKk" kind="relationship" relationship="viewControllers" id="Uyb-Cl-96O"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5b-tc-f5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,13 +487,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Post Event" image="Post" id="4vY-Xy-x9q"/>
                     <connections>
-                        <outlet property="eventDescription" destination="3rv-sU-YLB" id="t8f-es-dK5"/>
-                        <outlet property="eventFoods" destination="RB6-D1-xS8" id="Hfd-mG-fnL"/>
-                        <outlet property="eventLocation" destination="bPS-7K-ywm" id="dPE-DW-XXh"/>
-                        <outlet property="eventTime" destination="ZVN-vw-POo" id="Y4e-FY-8gB"/>
-                        <outlet property="eventTitle" destination="Nmo-x5-5aM" id="kMx-DS-jEf"/>
-                        <outlet property="eventURL" destination="zwt-2e-afP" id="3p6-1q-d7p"/>
-                        <outlet property="eventZip" destination="PNB-M2-Vtn" id="pxb-Ws-X7u"/>
+                        <outlet property="eventDescription" destination="3rv-sU-YLB" id="gRa-XM-pgm"/>
+                        <outlet property="eventFoods" destination="RB6-D1-xS8" id="5SY-je-8TI"/>
+                        <outlet property="eventLocation" destination="bPS-7K-ywm" id="O0a-8H-uz0"/>
+                        <outlet property="eventName" destination="Nmo-x5-5aM" id="B29-Qm-Ggc"/>
+                        <outlet property="eventTime" destination="ZVN-vw-POo" id="v9P-Wa-Pbz"/>
+                        <outlet property="eventURL" destination="zwt-2e-afP" id="PMs-rX-32m"/>
+                        <outlet property="eventZipcode" destination="PNB-M2-Vtn" id="r7R-9M-mur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVv-qw-tkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -610,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfq-Rn-yin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="1241.8290854572715"/>
+            <point key="canvasLocation" x="-394" y="1181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRb-1j-oBQ">
