@@ -11,7 +11,7 @@ import UIKit
 class PostViewController: UIViewController {
     
     
-    @IBOutlet weak var eventTitle: UITextField!
+    @IBOutlet weak var eventName: UITextField!
     
     @IBOutlet weak var eventTime: UILabel!
     

@@ -12,9 +12,9 @@ class EventDetailViewController: UIViewController {
     
     //this view will show modally like a pop up
     
-    @IBOutlet weak var eventTitle: UILabel!//the title of the event
+    @IBOutlet weak var eventName: UILabel!//the title of the event
     
-    @IBOutlet weak var foodServed: UILabel! //a list of food served, can go mutiple lines
+    @IBOutlet weak var eventFoods: UILabel! //a list of food served, can go mutiple lines
     
     @IBOutlet weak var eventTime: UILabel! //time and date od the event
     

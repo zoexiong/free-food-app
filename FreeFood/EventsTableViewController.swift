@@ -8,10 +8,36 @@
 
 import UIKit
 
+
+class Event{
+    var eventName:String
+    var eventLocation:String
+    var eventFoods:String
+    var eventTime:String
+    init(eventName:String, eventTime:String, eventLocation:String, eventFoods:String){
+        self.eventName=eventName
+        self.eventTime=eventTime
+        self.eventLocation=eventLocation
+        self.eventFoods=eventFoods
+    }
+}
+
 class EventsTableViewController: UITableViewController {
+    
+    var events = [Event]()
+    
+    func loadEvents(){
+        
+        let event1 = Event(eventName: "Info Session Amazon", eventTime: "1:30am Nov 29", eventLocation: "MGH 143", eventFoods: "Pizza, Coke")
+        let event2 = Event(eventName: "Public Lecture", eventTime: "12:30pm Nov 29", eventLocation: "MGH 143", eventFoods: "Sandwich")
+        events += [event1, event2]
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadEvents()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +55,27 @@ class EventsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return events.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventTableViewCell
 
-        // Configure the cell...
+        let event = events[indexPath.row]
+        cell.eventName.text = event.eventName
+        cell.eventLocation.text = event.eventLocation
+        cell.eventTime.text = event.eventTime
+        cell.eventFoods.text = event.eventFoods
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
