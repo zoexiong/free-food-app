@@ -9,17 +9,27 @@
 import UIKit
 
 class EventDetailViewController: UIViewController {
-    @IBOutlet weak var eventTitle: UILabel!
-
-    @IBOutlet weak var eventFoods: UILabel!
     
-    @IBOutlet weak var eventTime: UILabel!
+    //this view will show modally like a pop up
     
-    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!//the title of the event
     
-    @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var foodServed: UILabel! //a list of food served, can go mutiple lines
+    
+    @IBOutlet weak var eventTime: UILabel! //time and date od the event
+    
+    @IBOutlet weak var eventLocation: UILabel!//address of the location, can go multiple lines
+    
+    @IBOutlet weak var eventDescription: UILabel!//multiple lines, can be empty if not available
+    
+    @IBOutlet weak var detailButton: UIButton! //optional, could be hidden if no url available
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailButton.isHidden = true //by default, no url link available, so the button is hidden
+        //check url, when available, isHidden = false
 
         // Do any additional setup after loading the view.
     }
