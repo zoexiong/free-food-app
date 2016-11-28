@@ -477,13 +477,67 @@
                     <view key="view" contentMode="scaleToFill" id="Xwn-r1-s7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ys-Qk-hKx">
+                                <frame key="frameInset" minX="24" minY="28" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQb-0k-WLn">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-yp-qBp"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFS-M4-HZk">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTJ-jH-k89">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Alerts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-RG-fWt">
+                                <frame key="frameInset" minX="25" minY="121" width="50" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-fK-VC2">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qQb-0k-WLn" firstAttribute="leading" secondItem="Xwn-r1-s7P" secondAttribute="leadingMargin" constant="8" id="2cM-vU-wXR"/>
+                            <constraint firstItem="uFS-M4-HZk" firstAttribute="leading" secondItem="cEA-yp-qBp" secondAttribute="trailing" constant="8" id="7G2-tW-clS"/>
+                            <constraint firstItem="cEA-yp-qBp" firstAttribute="leading" secondItem="WTJ-jH-k89" secondAttribute="trailing" constant="8" id="99j-yf-Vaq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EJ5-fK-VC2" secondAttribute="trailing" constant="8" id="B1L-3b-cIQ"/>
+                            <constraint firstItem="WTJ-jH-k89" firstAttribute="leading" secondItem="7Ys-Qk-hKx" secondAttribute="trailing" constant="30" id="FNR-fe-tgn"/>
+                            <constraint firstItem="WTJ-jH-k89" firstAttribute="top" secondItem="wEk-b3-sl2" secondAttribute="bottom" constant="8" id="S35-c0-HdG"/>
+                            <constraint firstItem="cEA-yp-qBp" firstAttribute="leading" secondItem="WTJ-jH-k89" secondAttribute="trailing" constant="8" id="TQg-L5-zMN"/>
+                            <constraint firstItem="WTJ-jH-k89" firstAttribute="top" secondItem="wEk-b3-sl2" secondAttribute="bottom" constant="8" id="ZnH-nL-3Bu"/>
+                            <constraint firstItem="7Ys-Qk-hKx" firstAttribute="leading" secondItem="Xwn-r1-s7P" secondAttribute="leadingMargin" constant="8" id="aSv-ox-cdS"/>
+                            <constraint firstItem="1ax-RG-fWt" firstAttribute="top" secondItem="qQb-0k-WLn" secondAttribute="bottom" constant="25" id="bnP-y4-4Yg"/>
+                            <constraint firstItem="qQb-0k-WLn" firstAttribute="top" secondItem="7Ys-Qk-hKx" secondAttribute="bottom" constant="25" id="cv0-UE-LaQ"/>
+                            <constraint firstItem="cEA-yp-qBp" firstAttribute="top" secondItem="wEk-b3-sl2" secondAttribute="bottom" constant="8" id="dtj-JK-qX7"/>
+                            <constraint firstItem="EJ5-fK-VC2" firstAttribute="leading" secondItem="qQb-0k-WLn" secondAttribute="trailing" constant="12" id="eXH-dT-UmS"/>
+                            <constraint firstItem="uFS-M4-HZk" firstAttribute="top" secondItem="wEk-b3-sl2" secondAttribute="bottom" constant="8" id="k2E-Sd-oU0"/>
+                            <constraint firstItem="EJ5-fK-VC2" firstAttribute="centerY" secondItem="qQb-0k-WLn" secondAttribute="centerY" id="oua-Yr-ZlR"/>
+                            <constraint firstItem="WTJ-jH-k89" firstAttribute="leading" secondItem="Xwn-r1-s7P" secondAttribute="leadingMargin" constant="15" id="sGj-HT-RIx"/>
+                            <constraint firstItem="7Ys-Qk-hKx" firstAttribute="top" secondItem="wEk-b3-sl2" secondAttribute="bottom" constant="8" id="vYK-u6-njH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="Setting" id="VMO-cF-EhJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfq-Rn-yin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="1242"/>
+            <point key="canvasLocation" x="628" y="1241.8290854572715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gRb-1j-oBQ">
