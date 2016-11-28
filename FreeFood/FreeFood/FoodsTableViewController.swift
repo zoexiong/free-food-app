@@ -20,16 +20,19 @@ class Food {
 class FoodsTableViewController: UITableViewController {
     
     var foods=[Food]()
-    func loadData(){
+    
+    //test data goes here
+    func testLoadFood(){
         let pizza = Food(foodName: "Pizza", foodImage: #imageLiteral(resourceName: "Pizza"))
         let sandwich = Food(foodName: "Sandwich", foodImage: #imageLiteral(resourceName: "Sandwich"))
         foods += [pizza, sandwich]
     }
+    //test data ends here
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        testLoadFood()
         
         
 

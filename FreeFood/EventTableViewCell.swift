@@ -13,8 +13,6 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventName: UILabel!
     
     @IBOutlet weak var eventFoods: UILabel!
-
-    
     
     @IBOutlet weak var eventTime: UILabel!
     

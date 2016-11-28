@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+//test data goes here
 class Event{
     var eventName:String
     var eventLocation:String
@@ -21,23 +21,26 @@ class Event{
         self.eventFoods=eventFoods
     }
 }
+//test data ends here
+
 
 class EventsTableViewController: UITableViewController {
     
     var events = [Event]()
     
-    func loadEvents(){
+    //test data starts here
+    func testLoadEvents(){
         
         let event1 = Event(eventName: "Info Session Amazon", eventTime: "1:30am Nov 29", eventLocation: "MGH 143", eventFoods: "Pizza, Coke")
         let event2 = Event(eventName: "Public Lecture", eventTime: "12:30pm Nov 29", eventLocation: "MGH 143", eventFoods: "Sandwich")
         events += [event1, event2]
         
     }
-    
+    //test data ends here
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadEvents()
+        testLoadEvents()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

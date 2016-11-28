@@ -442,7 +442,7 @@
                                 </constraints>
                                 <state key="normal" title="Add" image="AddFood"/>
                                 <connections>
-                                    <segue destination="ug8-6Z-108" kind="presentation" id="d59-Mu-eUW"/>
+                                    <segue destination="ug8-6Z-108" kind="show" id="OlN-Oo-UYJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -526,7 +526,7 @@
                             </items>
                         </tabBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="pickFoodCell" selectionStyle="default" indentationWidth="10" id="x01-W3-lnl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="pickFoodCell" selectionStyle="default" indentationWidth="10" id="x01-W3-lnl" userLabel="pickFoodCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x01-W3-lnl" id="Fno-Pn-xVL">

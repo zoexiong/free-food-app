@@ -8,23 +8,34 @@
 
 import UIKit
 
+class Item{
+    var itemName:String
+    init(itemName:String){
+        self.itemName=itemName
+    }
+}
+
 
 class PickFoodTableViewController: UITableViewController {
-    //test data starts here
-    var foodItems = [String]()
     
-    func testLoadFood(){
-        foodItems=["burger","curry","coke","panini","pizza","rice","sandwich","tofu","tortilla"]
+    var foodItems:[Item] = []
+    
+    func testLoadItem(){
+        let burger = Item(itemName: "burger")
+        let curry = Item(itemName: "curry")
+        let coke = Item(itemName: "coke")
+        let panini = Item(itemName: "panini")
+        let pizza = Item(itemName: "pizza")
+        let rice = Item(itemName: "rice")
+        let sandwich = Item(itemName: "sandwich")
+        let tortilla = Item(itemName: "tortilla")
+        foodItems += [burger,curry,coke,panini,pizza,rice,sandwich,tortilla]
     }
-    
-     //test data ends here
-    
-    @IBOutlet weak var foodItem: UILabel!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLoadFood()
+        //test data
+        testLoadItem()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,8 +64,7 @@ class PickFoodTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pickFoodCell", for: indexPath)
-
-        cell.textLabel?.text = foodItems[indexPath.row]
+        cell.textLabel?.text = foodItems[indexPath.row].itemName
         return cell
     }
     
