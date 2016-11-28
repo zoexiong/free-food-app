@@ -9,6 +9,21 @@
 import UIKit
 
 class PostViewController: UIViewController {
+    
+    
+    @IBOutlet weak var eventTitle: UITextField!
+    
+    @IBOutlet weak var eventTime: UILabel!
+    
+    @IBOutlet weak var eventLocation: UITextField!
+    
+    @IBOutlet weak var eventZip: UITextField!
+    
+    @IBOutlet weak var eventFoods: UILabel!
+    
+    @IBOutlet weak var eventDescription: UITextView!
+    
+    @IBOutlet weak var eventURL: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
