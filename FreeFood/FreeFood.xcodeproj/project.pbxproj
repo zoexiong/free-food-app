@@ -20,6 +20,7 @@
 		B628D3CD1DEB867F0024A819 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */; };
 		B628D3CF1DEB86BC0024A819 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CE1DEB86BC0024A819 /* PostViewController.swift */; };
 		B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3D01DEB871C0024A819 /* SettingViewController.swift */; };
+		B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685158B1DEBB5F7001F2F54 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewController.swift; path = ../EventsTableViewController.swift; sourceTree = "<group>"; };
 		B628D3CE1DEB86BC0024A819 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B628D3D01DEB871C0024A819 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B685158B1DEBB5F7001F2F54 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				B628D3941DEB84EA0024A819 /* AppDelegate.swift */,
 				B628D3981DEB84EA0024A819 /* Main.storyboard */,
+				B685158B1DEBB5F7001F2F54 /* WebViewController.swift */,
 				B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */,
 				B628D3D01DEB871C0024A819 /* SettingViewController.swift */,
 				B628D3CE1DEB86BC0024A819 /* PostViewController.swift */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B628D3CF1DEB86BC0024A819 /* PostViewController.swift in Sources */,
+				B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */,
 				B628D3CB1DEB861E0024A819 /* EventTableViewCell.swift in Sources */,
 				B628D3C31DEB85650024A819 /* FoodsTableViewController.swift in Sources */,
 				B628D3C51DEB85810024A819 /* FoodTableViewCell.swift in Sources */,
