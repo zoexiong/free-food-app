@@ -656,7 +656,7 @@
         <!--Setting-->
         <scene sceneID="gZD-R6-XUL">
             <objects>
-                <tableViewController id="I8M-Ze-bXG" sceneMemberID="viewController">
+                <tableViewController id="I8M-Ze-bXG" customClass="SettingTableViewController" customModule="FreeFood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="faw-hX-HPd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -702,24 +702,18 @@
                                                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTL-Bb-BHB">
-                                                    <rect key="frame" x="329" y="7" width="30" height="30"/>
-                                                    <state key="normal" title="Edit"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98105" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-a4-0Tx">
-                                                    <rect key="frame" x="96" y="11" width="49" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="98105" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI3-5L-b2g">
+                                                    <rect key="frame" x="96" y="13.5" width="46" height="17"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Mb6-a4-0Tx" firstAttribute="leading" secondItem="X5e-Nr-uht" secondAttribute="trailing" constant="12" id="6sl-F5-aOH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aTL-Bb-BHB" secondAttribute="trailing" constant="8" id="MMh-DB-0hh"/>
+                                                <constraint firstItem="cI3-5L-b2g" firstAttribute="leading" secondItem="X5e-Nr-uht" secondAttribute="trailing" constant="12" id="HTn-RZ-oeQ"/>
                                                 <constraint firstItem="X5e-Nr-uht" firstAttribute="leading" secondItem="vZV-ga-1Uj" secondAttribute="leadingMargin" constant="8" id="Nmb-Vc-VtV"/>
                                                 <constraint firstItem="X5e-Nr-uht" firstAttribute="centerY" secondItem="vZV-ga-1Uj" secondAttribute="centerY" id="aei-jd-pLk"/>
-                                                <constraint firstItem="Mb6-a4-0Tx" firstAttribute="centerY" secondItem="vZV-ga-1Uj" secondAttribute="centerY" id="ofi-t9-Tz9"/>
-                                                <constraint firstItem="aTL-Bb-BHB" firstAttribute="centerY" secondItem="vZV-ga-1Uj" secondAttribute="centerY" id="zMf-8g-0RZ"/>
+                                                <constraint firstItem="cI3-5L-b2g" firstAttribute="centerY" secondItem="vZV-ga-1Uj" secondAttribute="centerY" id="iub-XP-yYe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -732,6 +726,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Setting" id="QcG-cJ-m2S"/>
+                    <connections>
+                        <outlet property="toggle" destination="X7L-uP-i7b" id="f5g-W2-Dbj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRs-4Q-mIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
