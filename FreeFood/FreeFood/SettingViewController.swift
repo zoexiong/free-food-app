@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
-    
+class SettingViewController: UIViewController, UITabBarControllerDelegate {
     
     
 
