@@ -20,7 +20,6 @@
 		B628D3C51DEB85810024A819 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */; };
 		B628D3CB1DEB861E0024A819 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */; };
 		B628D3CD1DEB867F0024A819 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */; };
-		B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3D01DEB871C0024A819 /* SettingViewController.swift */; };
 		B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685158B1DEBB5F7001F2F54 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewController.swift; path = ../EventsTableViewController.swift; sourceTree = "<group>"; };
-		B628D3D01DEB871C0024A819 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B685158B1DEBB5F7001F2F54 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +117,6 @@
 				B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */,
 				B685158B1DEBB5F7001F2F54 /* WebViewController.swift */,
 				B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */,
-				B628D3D01DEB871C0024A819 /* SettingViewController.swift */,
 				B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */,
 				B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */,
 				B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */,
@@ -292,7 +289,6 @@
 				B628D3C31DEB85650024A819 /* FoodsTableViewController.swift in Sources */,
 				B628D3C51DEB85810024A819 /* FoodTableViewCell.swift in Sources */,
 				B628D3CD1DEB867F0024A819 /* EventsTableViewController.swift in Sources */,
-				B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */,
 				B61E04731DEB91A3001CB781 /* EventDetailViewController.swift in Sources */,
 				B60167DD1DED20660019A014 /* PickFoodTableViewController.swift in Sources */,
 				B628D3951DEB84EA0024A819 /* AppDelegate.swift in Sources */,
