@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B60167DD1DED20660019A014 /* PickFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */; };
 		B61E04731DEB91A3001CB781 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */; };
+		B6263F5E1DED6C46000244B6 /* PostEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6263F5D1DED6C46000244B6 /* PostEventTableViewController.swift */; };
 		B628D3951DEB84EA0024A819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3941DEB84EA0024A819 /* AppDelegate.swift */; };
 		B628D39A1DEB84EA0024A819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B628D3981DEB84EA0024A819 /* Main.storyboard */; };
 		B628D39C1DEB84EA0024A819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B628D39B1DEB84EA0024A819 /* Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		B628D3C51DEB85810024A819 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */; };
 		B628D3CB1DEB861E0024A819 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */; };
 		B628D3CD1DEB867F0024A819 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */; };
-		B628D3CF1DEB86BC0024A819 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CE1DEB86BC0024A819 /* PostViewController.swift */; };
 		B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3D01DEB871C0024A819 /* SettingViewController.swift */; };
 		B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685158B1DEBB5F7001F2F54 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickFoodTableViewController.swift; path = ../PickFoodTableViewController.swift; sourceTree = "<group>"; };
 		B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		B6263F5D1DED6C46000244B6 /* PostEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEventTableViewController.swift; sourceTree = "<group>"; };
 		B628D3911DEB84EA0024A819 /* FreeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B628D3941DEB84EA0024A819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B628D3991DEB84EA0024A819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableViewCell.swift; path = ../EventTableViewCell.swift; sourceTree = "<group>"; };
 		B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewController.swift; path = ../EventsTableViewController.swift; sourceTree = "<group>"; };
-		B628D3CE1DEB86BC0024A819 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B628D3D01DEB871C0024A819 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B685158B1DEBB5F7001F2F54 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,11 +115,11 @@
 			children = (
 				B628D3941DEB84EA0024A819 /* AppDelegate.swift */,
 				B628D3981DEB84EA0024A819 /* Main.storyboard */,
+				B6263F5D1DED6C46000244B6 /* PostEventTableViewController.swift */,
 				B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */,
 				B685158B1DEBB5F7001F2F54 /* WebViewController.swift */,
 				B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */,
 				B628D3D01DEB871C0024A819 /* SettingViewController.swift */,
-				B628D3CE1DEB86BC0024A819 /* PostViewController.swift */,
 				B628D3CA1DEB861E0024A819 /* EventTableViewCell.swift */,
 				B628D3CC1DEB867F0024A819 /* EventsTableViewController.swift */,
 				B628D3C41DEB85810024A819 /* FoodTableViewCell.swift */,
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B628D3CF1DEB86BC0024A819 /* PostViewController.swift in Sources */,
+				B6263F5E1DED6C46000244B6 /* PostEventTableViewController.swift in Sources */,
 				B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */,
 				B628D3CB1DEB861E0024A819 /* EventTableViewCell.swift in Sources */,
 				B628D3C31DEB85650024A819 /* FoodsTableViewController.swift in Sources */,
