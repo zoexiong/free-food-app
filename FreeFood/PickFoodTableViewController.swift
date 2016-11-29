@@ -2,40 +2,16 @@
 //  PickFoodTableViewController.swift
 //  FreeFood
 //
-//  Created by Xuan Liu on 2016/11/27.
+//  Created by Xuan Liu on 2016/11/28.
 //  Copyright © 2016年 Xuan Liu. All rights reserved.
 //
 
 import UIKit
 
-class Item{
-    var itemName:String
-    init(itemName:String){
-        self.itemName=itemName
-    }
-}
-
-
 class PickFoodTableViewController: UITableViewController {
-    
-    var foodItems:[Item] = []
-    
-    func testLoadItem(){
-        let burger = Item(itemName: "burger")
-        let curry = Item(itemName: "curry")
-        let coke = Item(itemName: "coke")
-        let panini = Item(itemName: "panini")
-        let pizza = Item(itemName: "pizza")
-        let rice = Item(itemName: "rice")
-        let sandwich = Item(itemName: "sandwich")
-        let tortilla = Item(itemName: "tortilla")
-        foodItems += [burger,curry,coke,panini,pizza,rice,sandwich,tortilla]
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //test data
-        testLoadItem()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,21 +29,23 @@ class PickFoodTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foodItems.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        cell.textLabel?.text = foodItems[indexPath.row].itemName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

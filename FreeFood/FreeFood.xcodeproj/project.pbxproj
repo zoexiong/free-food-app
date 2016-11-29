@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60167DD1DED20660019A014 /* PickFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */; };
 		B61E04731DEB91A3001CB781 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */; };
 		B628D3951DEB84EA0024A819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3941DEB84EA0024A819 /* AppDelegate.swift */; };
 		B628D39A1DEB84EA0024A819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B628D3981DEB84EA0024A819 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		B628D3CF1DEB86BC0024A819 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3CE1DEB86BC0024A819 /* PostViewController.swift */; };
 		B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628D3D01DEB871C0024A819 /* SettingViewController.swift */; };
 		B685158C1DEBB5F7001F2F54 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685158B1DEBB5F7001F2F54 /* WebViewController.swift */; };
-		B6D819981DEBED2900F2DE33 /* PickFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D819971DEBED2900F2DE33 /* PickFoodTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickFoodTableViewController.swift; path = ../PickFoodTableViewController.swift; sourceTree = "<group>"; };
 		B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		B628D3911DEB84EA0024A819 /* FreeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B628D3941DEB84EA0024A819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		B628D3CE1DEB86BC0024A819 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B628D3D01DEB871C0024A819 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B685158B1DEBB5F7001F2F54 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		B6D819971DEBED2900F2DE33 /* PickFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickFoodTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 			children = (
 				B628D3941DEB84EA0024A819 /* AppDelegate.swift */,
 				B628D3981DEB84EA0024A819 /* Main.storyboard */,
-				B6D819971DEBED2900F2DE33 /* PickFoodTableViewController.swift */,
+				B60167DC1DED20660019A014 /* PickFoodTableViewController.swift */,
 				B685158B1DEBB5F7001F2F54 /* WebViewController.swift */,
 				B61E04721DEB91A3001CB781 /* EventDetailViewController.swift */,
 				B628D3D01DEB871C0024A819 /* SettingViewController.swift */,
@@ -294,7 +294,7 @@
 				B628D3CD1DEB867F0024A819 /* EventsTableViewController.swift in Sources */,
 				B628D3D11DEB871C0024A819 /* SettingViewController.swift in Sources */,
 				B61E04731DEB91A3001CB781 /* EventDetailViewController.swift in Sources */,
-				B6D819981DEBED2900F2DE33 /* PickFoodTableViewController.swift in Sources */,
+				B60167DD1DED20660019A014 /* PickFoodTableViewController.swift in Sources */,
 				B628D3951DEB84EA0024A819 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

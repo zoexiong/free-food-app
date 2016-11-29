@@ -12,7 +12,7 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var eventName: UITextField!
     
-    @IBOutlet weak var eventTime: UILabel!
+    @IBOutlet weak var pickerTextField: UITextField!
 
     @IBOutlet weak var eventLocation: UITextField!
 
@@ -24,10 +24,15 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var eventURL: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let pickerView = UIDatePicker()
+        
+        pickerTextField.inputView = pickerView
+               // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
