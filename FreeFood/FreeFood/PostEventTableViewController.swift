@@ -56,18 +56,25 @@ class PostEventTableViewController: UITableViewController {
             }
     }
     
+    
     //cell set up
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
+            
             //only the 2nd section (with index 1) is dynamic
             if indexPath.section == 1 {
                 //when it reaches the dynamic section, generate the reusable cell identified by "foodItemCell", which we init it at the beginning of this code file
-                let cell = tableView.dequeueReusableCell(withIdentifier: "foodItemCell",
-                                                         for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "foodItemCell",for: indexPath)
+                //disable cell selection highlight
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
+                
                 //fetch the corresponding name of the food item and populate many rows
                 cell.textLabel?.text = foodItems[indexPath.row]
-                return cell
+                //disable the selected row highlight
+                                return cell
             }else{ //for the 1st section (the more static one)
+//                let cellS = super.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+//                cellS.selectionStyle = .none
                 return super.tableView(tableView, cellForRowAt: indexPath)
             }
     }
