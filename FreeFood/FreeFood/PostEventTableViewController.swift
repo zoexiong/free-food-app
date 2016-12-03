@@ -22,8 +22,51 @@ class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventDescription: UITextField!
     
-    @IBAction func submitEvent(_ sender: Any) {
+    //add alert
+    func alert(){
+        let alertController:UIAlertController = {
+            return UIAlertController(title: "incomplete", message: "You must fill all the required fields (indicated by *) to post the event", preferredStyle: UIAlertControllerStyle.alert)
+        }()
+        
+        let okAlert:UIAlertAction = UIAlertAction(title: "alert", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction!) -> Void in NSLog("submit failed")}
+        
+        alertController.addAction(okAlert)
+        
+        self.present(alertController, animated: true, completion: nil);
     }
+    
+    @IBAction func submitEvent(_ sender: Any) {
+        
+        //get the values in form and construct JSON
+        let name = eventName.text
+        let dateTime = pickerTextField.text
+        let location = eventLocation.text
+        let zipcode = eventZipcode.text
+        _ = eventURL.text
+        _ = eventDescription.text
+        
+        //test if user completed required fields
+        if name != "" {
+            if dateTime != ""{
+                if location != ""{
+                    if zipcode != ""{
+                        print("post json")
+                        //post JSON to server
+                        
+                        //submit success alert and back to main screen
+                        } else{
+                        alert()
+                    }
+                } else {
+                    alert()
+                }
+            } else {
+                alert()
+            }
+        }
+    }
+    
+    
     
     let foodItems = ["food1","food2","food3","food4","food5"]
     
