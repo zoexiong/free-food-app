@@ -20,7 +20,10 @@ class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventURL: UITextField!
     
-    @IBOutlet weak var eventDescription: NSLayoutConstraint!
+    @IBOutlet weak var eventDescription: UITextField!
+    
+    @IBAction func submitEvent(_ sender: Any) {
+    }
     
     let foodItems = ["food1","food2","food3","food4","food5"]
     
