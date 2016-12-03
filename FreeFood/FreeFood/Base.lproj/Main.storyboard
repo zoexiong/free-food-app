@@ -463,7 +463,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Post Event" id="2DI-ba-NOF">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ZCR-bY-hAW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ZCR-bY-hAW">
+                            <connections>
+                                <action selector="submitEvent:" destination="xfk-DZ-XLi" id="tkw-o1-3WG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="eventDescription" destination="XuG-ON-ov9" id="OiE-7q-TX8"/>

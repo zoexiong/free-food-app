@@ -22,6 +22,8 @@ class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventDescription: UITextField!
     
+    @IBAction func submitEvent(_ sender: Any) {
+    }
     
     let foodItems = ["food1","food2","food3","food4","food5"]
     
