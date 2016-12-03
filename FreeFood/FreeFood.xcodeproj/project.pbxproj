@@ -217,7 +217,7 @@
 				TargetAttributes = {
 					B628D3901DEB84EA0024A819 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = J8HX8W773Z;
+						DevelopmentTeam = E6B7FJXSWV;
 						ProvisioningStyle = Automatic;
 					};
 					B628D3A41DEB84EA0024A819 = {
@@ -447,11 +447,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J8HX8W773Z;
+				DEVELOPMENT_TEAM = E6B7FJXSWV;
 				INFOPLIST_FILE = FreeFood/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.foodies.FreeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoexiong.freefood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -461,11 +461,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J8HX8W773Z;
+				DEVELOPMENT_TEAM = E6B7FJXSWV;
 				INFOPLIST_FILE = FreeFood/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.foodies.FreeFood;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoexiong.freefood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
