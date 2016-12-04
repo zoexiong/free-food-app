@@ -1,3 +1,4 @@
+
 //
 //  PostEventTableViewController.swift
 //  FreeFood
@@ -13,14 +14,9 @@ class PostEventTableViewController: UITableViewController {
     @IBOutlet weak var eventName: UITextField!
     
     @IBOutlet weak var pickerTextField: UITextField!
-    @IBAction func pickDateAction(_ sender: Any) {
-        
-        
-    }
+    
     @IBOutlet weak var endPickerTextField: UITextField!
     
-    @IBAction func endPickDateAction(_ sender: Any) {
-    }
     @IBOutlet weak var eventLocation: UITextField!
     
     @IBOutlet weak var eventZipcode: UITextField!
@@ -29,10 +25,87 @@ class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventDescription: UITextField!
     
+    var startDate: String=""
+    var endDate: String=""
+    var pickerView = UIDatePicker()
+    var endPickerView = UIDatePicker()
+    let foodItems = ["food1","food2","food3","food4","food5"]
+    //let foodItems = [String]()
+    var dateFormatter = DateFormatter()
+    
+    
     @IBAction func submitEvent(_ sender: Any) {
+        //get the values in form and construct JSON
+        let name = eventName.text
+        let dateTime = pickerTextField.text
+        let location = eventLocation.text
+        let zipcode = eventZipcode.text
+        let url = eventURL.text
+        let description = eventDescription.text
+        
+        //test if user completed required fields
+        if name != "" {
+            if dateTime != ""{
+                if location != ""{
+                    if zipcode != ""{
+                        if foodItems.count >= 1 {
+                            let eventObject:AnyObject = [
+                                "event_name":name ?? "",
+                                "location": location ?? "",
+                                "zip_code": zipcode ?? "",
+                                "date":"11/16/2016",
+                                "start_time": "12:30",
+                                "end_time": "13:30",
+                                "foods": foodItems,
+                                "description":description ?? "",
+                                "url": url ?? ""
+                                ] as AnyObject
+                            
+                            let valid = JSONSerialization.isValidJSONObject(eventObject) // should be true
+                            print(eventObject)
+                            //post JSON to server
+                            
+                            //submit success alert and back to main screen
+                            alert(message: "submit successful")
+                        } else{
+                            alert(message: "You must enter at least one food item to post the event")
+                        }
+                    } else{
+                        alert(message: "You must fill all the required fields (indicated by *) to post the event")
+                    }
+                } else {
+                    alert(message: "You must fill all the required fields (indicated by *) to post the event")
+                }
+            } else {
+                alert(message: "You must fill all the required fields (indicated by *) to post the event")
+            }
+        }
     }
     
-    let foodItems = ["food1","food2","food3","food4","food5"]
+    @IBAction func pickDateAction(_ sender: Any) {
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        startDate = dateFormatter.string(from: pickerView.date)
+        pickerTextField.text = startDate
+    }
+    
+    @IBAction func endPickDateAction(_ sender: Any) {
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        endDate = dateFormatter.string(from: endPickerView.date)
+        endPickerTextField.text = endDate
+    }
+    
+    //add alert
+    func alert(message: String){
+        let alertController:UIAlertController = {
+            return UIAlertController(title: "Submit", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        }()
+        
+        let okAlert:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction!) -> Void in NSLog("submit failed")}
+        
+        alertController.addAction(okAlert)
+        
+        self.present(alertController, animated: true, completion: nil);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +120,10 @@ class PostEventTableViewController: UITableViewController {
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self])
             .font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightMedium)
         //set up date picker for the event time text field
-        let pickerView = UIDatePicker()
+        pickerView = UIDatePicker()
+        endPickerView = UIDatePicker()
         pickerTextField.inputView = pickerView
-        endPickerTextField.inputView = pickerView
+        endPickerTextField.inputView = endPickerView
     }
     
     //2 sections in total
@@ -82,10 +156,10 @@ class PostEventTableViewController: UITableViewController {
                 //fetch the corresponding name of the food item and populate many rows
                 cell.textLabel?.text = foodItems[indexPath.row]
                 //disable the selected row highlight
-                                return cell
+                return cell
             }else{ //for the 1st section (the more static one)
-//                let cellS = super.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//                cellS.selectionStyle = .none
+                //                let cellS = super.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+                //                cellS.selectionStyle = .none
                 return super.tableView(tableView, cellForRowAt: indexPath)
             }
     }
@@ -110,13 +184,14 @@ class PostEventTableViewController: UITableViewController {
             return super.tableView(tableView, indentationLevelForRowAt: indexPath)
         }
     }
-//disable highlight for each row
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //Change the selected background view of the cell.
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
+    //disable highlight for each row
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        //Change the selected background view of the cell.
+    //        tableView.deselectRow(at: indexPath, animated: true)
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
+
