@@ -33,6 +33,9 @@ class PostEventTableViewController: UITableViewController {
     //let foodItems = [String]()
     var dateFormatter = DateFormatter()
     
+    func submitFailedAlert(){
+        alert(message: "You must fill all the required fields (indicated by *) to post the event", "submission failed")
+    }
     
     @IBAction func submitEvent(_ sender: Any) {
         //get the values in form and construct JSON
@@ -66,18 +69,18 @@ class PostEventTableViewController: UITableViewController {
                             //post JSON to server
                             
                             //submit success alert and back to main screen
-                            alert(message: "submit successful")
+                            alert(message: "submit successful", "submitted!")
                         } else{
-                            alert(message: "You must enter at least one food item to post the event")
+                            submitFailedAlert()
                         }
                     } else{
-                        alert(message: "You must fill all the required fields (indicated by *) to post the event")
+                        submitFailedAlert()
                     }
                 } else {
-                    alert(message: "You must fill all the required fields (indicated by *) to post the event")
+                    submitFailedAlert()
                 }
             } else {
-                alert(message: "You must fill all the required fields (indicated by *) to post the event")
+                submitFailedAlert()
             }
         }
     }
@@ -95,12 +98,12 @@ class PostEventTableViewController: UITableViewController {
     }
     
     //add alert
-    func alert(message: String){
+    func alert(message: String, _ submitLog:String){
         let alertController:UIAlertController = {
             return UIAlertController(title: "Submit", message: message, preferredStyle: UIAlertControllerStyle.alert)
         }()
         
-        let okAlert:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction!) -> Void in NSLog("submit failed")}
+        let okAlert:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction!) -> Void in NSLog(submitLog)}
         
         alertController.addAction(okAlert)
         
@@ -156,10 +159,10 @@ class PostEventTableViewController: UITableViewController {
                 //fetch the corresponding name of the food item and populate many rows
                 cell.textLabel?.text = foodItems[indexPath.row]
                 //disable the selected row highlight
-                                return cell
+                return cell
             }else{ //for the 1st section (the more static one)
-//                let cellS = super.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//                cellS.selectionStyle = .none
+                //                let cellS = super.tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+                //                cellS.selectionStyle = .none
                 return super.tableView(tableView, cellForRowAt: indexPath)
             }
     }
@@ -184,11 +187,11 @@ class PostEventTableViewController: UITableViewController {
             return super.tableView(tableView, indentationLevelForRowAt: indexPath)
         }
     }
-//disable highlight for each row
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        //Change the selected background view of the cell.
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
+    //disable highlight for each row
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        //Change the selected background view of the cell.
+    //        tableView.deselectRow(at: indexPath, animated: true)
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
