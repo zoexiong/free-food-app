@@ -264,24 +264,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="GzU-lC-Mar" userLabel="Event Time">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="GzU-lC-Mar" userLabel="Start Time">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GzU-lC-Mar" id="eUF-iN-3oB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-K4-Sxz">
-                                                    <rect key="frame" x="8" y="11" width="95" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-K4-Sxz">
+                                                    <rect key="frame" x="8" y="11" width="96" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="pickerTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0M6-LZ-Mg7" userLabel="Time Cell">
-                                                    <rect key="frame" x="111" y="13.5" width="256" height="17"/>
+                                                    <rect key="frame" x="112" y="13.5" width="255" height="17"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="pickDateAction:" destination="xfk-DZ-XLi" eventType="editingDidEnd" id="u9L-E2-EgC"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -293,8 +296,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="4hR-Me-m2U" userLabel="Event Location">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KkP-yw-qu8" userLabel="End Time">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KkP-yw-qu8" id="rcc-wv-87M">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-ej-O5n">
+                                                    <rect key="frame" x="8" y="11" width="86" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="endPickerTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6j-WU-kta" userLabel="Time Cell">
+                                                    <rect key="frame" x="102" y="13.5" width="265" height="17"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="endPickDateAction:" destination="xfk-DZ-XLi" eventType="editingDidEnd" id="rK9-vt-N6M"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f6j-WU-kta" firstAttribute="centerY" secondItem="rcc-wv-87M" secondAttribute="centerY" id="Dqt-tl-jl4"/>
+                                                <constraint firstItem="C1M-ej-O5n" firstAttribute="leading" secondItem="rcc-wv-87M" secondAttribute="leading" constant="8" id="GXp-i8-gjS"/>
+                                                <constraint firstItem="C1M-ej-O5n" firstAttribute="centerY" secondItem="rcc-wv-87M" secondAttribute="centerY" id="OGd-n1-5nk"/>
+                                                <constraint firstItem="f6j-WU-kta" firstAttribute="leading" secondItem="C1M-ej-O5n" secondAttribute="trailing" constant="8" id="TGh-0K-MO4"/>
+                                                <constraint firstAttribute="trailing" secondItem="f6j-WU-kta" secondAttribute="trailing" constant="8" id="VUk-T8-5Vz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="4hR-Me-m2U" userLabel="Event Location">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hR-Me-m2U" id="Yhp-aR-TiU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -323,7 +358,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="8QL-Ks-pra" userLabel="Zipcode">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8QL-Ks-pra" id="dy4-4j-JkR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -352,7 +387,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="jpm-dj-DhN" userLabel="Web Link">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpm-dj-DhN" id="MYu-Ol-Yep">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -381,7 +416,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Avl-QY-5zw" userLabel="Event Description">
-                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Avl-QY-5zw" id="FLN-sa-cxi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -410,7 +445,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="WfR-IN-YGa" userLabel="Edit Food">
-                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WfR-IN-YGa" id="SWW-bS-Ffs">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -447,7 +482,7 @@
                             <tableViewSection headerTitle="Food List" id="a3J-kK-9E7" userLabel="Food List">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="qa6-c9-kUj">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="380" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qa6-c9-kUj" id="yUb-4o-FNK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
@@ -470,6 +505,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="endPickerTextField" destination="f6j-WU-kta" id="NDH-ev-YhY"/>
                         <outlet property="eventDescription" destination="XuG-ON-ov9" id="OiE-7q-TX8"/>
                         <outlet property="eventLocation" destination="zk3-pl-x3K" id="NKA-jA-39T"/>
                         <outlet property="eventName" destination="xrp-e3-qh4" id="Oqc-mk-tVL"/>

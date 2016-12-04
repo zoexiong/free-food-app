@@ -13,7 +13,14 @@ class PostEventTableViewController: UITableViewController {
     @IBOutlet weak var eventName: UITextField!
     
     @IBOutlet weak var pickerTextField: UITextField!
+    @IBAction func pickDateAction(_ sender: Any) {
+        
+        
+    }
+    @IBOutlet weak var endPickerTextField: UITextField!
     
+    @IBAction func endPickDateAction(_ sender: Any) {
+    }
     @IBOutlet weak var eventLocation: UITextField!
     
     @IBOutlet weak var eventZipcode: UITextField!
@@ -42,6 +49,7 @@ class PostEventTableViewController: UITableViewController {
         //set up date picker for the event time text field
         let pickerView = UIDatePicker()
         pickerTextField.inputView = pickerView
+        endPickerTextField.inputView = pickerView
     }
     
     //2 sections in total
