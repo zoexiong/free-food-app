@@ -21,13 +21,21 @@ class PickFoodTableViewController: UITableViewController {
     
     @IBAction func addNewFood(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Add New Food", message: "Food info goes here.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-            print("Save")
-            
+        let alertController = UIAlertController(title: "Add New Food", message: "Please enter new food name.", preferredStyle: UIAlertControllerStyle.alert)
+        let newFoodTextField = UITextField()
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            print("Canceld")
         }
+        let okAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (alert: UIAlertAction!) -> Void in
+            self.foodList.append(newFoodTextField.text!)
+            print("Saved")
+            print("new item:",newFoodTextField.text!)
+        }
+        alertController.addAction(cancelAction)
         alertController.addAction(okAction)
+        alertController.addTextField { (newFoodTextField) -> Void in
+            newFoodTextField.placeholder = "Input here..."
+        }
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -37,8 +45,6 @@ class PickFoodTableViewController: UITableViewController {
         
         //create a reuseable cell for each food item displayed in the food list
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "itemCell")
-        //remove additional unecessary cells
-        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

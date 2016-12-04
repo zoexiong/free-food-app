@@ -39,39 +39,38 @@ class PostEventTableViewController: UITableViewController {
     
     @IBAction func submitEvent(_ sender: Any) {
         //get the values in form and construct JSON
-        let name = eventName.text
-        let dateTime = pickerTextField.text
-        let location = eventLocation.text
-        let zipcode = eventZipcode.text
-        let url = eventURL.text
-        let description = eventDescription.text
-        
+        let name = eventName.text!
+        let dateTime = pickerTextField.text!
+        let location = eventLocation.text!
+        let zipcode = eventZipcode.text!
+        let url = eventURL.text!
+        let description = eventDescription.text!
         //test if user completed required fields
         if name != "" {
             if dateTime != ""{
-                if location != ""{
-                    if zipcode != ""{
+                if location != "" {
+                    if zipcode != "" {
                         if foodItems.count >= 1 {
                             let eventObject:AnyObject = [
-                                "event_name":name ?? "",
-                                "location": location ?? "",
-                                "zip_code": zipcode ?? "",
+                                "event_name":name ,
+                                "location": location ,
+                                "zip_code": zipcode ,
                                 "date":"11/16/2016",
                                 "start_time": "12:30",
                                 "end_time": "13:30",
                                 "foods": foodItems,
-                                "description":description ?? "",
-                                "url": url ?? ""
+                                "description":description ,
+                                "url": url 
                                 ] as AnyObject
                             
-                            let valid = JSONSerialization.isValidJSONObject(eventObject) // should be true
+                            _ = JSONSerialization.isValidJSONObject(eventObject) // should be true
                             print(eventObject)
                             //post JSON to server
                             
                             //submit success alert and back to main screen
                             alert(message: "submit successful", "submitted!")
                         } else{
-                            submitFailedAlert()
+                            alert(message: "You must enter at least one food item to post the event", "submit failed")
                         }
                     } else{
                         submitFailedAlert()
@@ -82,6 +81,8 @@ class PostEventTableViewController: UITableViewController {
             } else {
                 submitFailedAlert()
             }
+        }else {
+            submitFailedAlert()
         }
     }
     
