@@ -22,6 +22,9 @@ class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventDescription: UITextField!
     
+    var strDate: String=""
+    var pickerView = UIDatePicker()
+    
     //add alert
     func alert(){
         let alertController:UIAlertController = {
@@ -34,7 +37,15 @@ class PostEventTableViewController: UITableViewController {
         
         self.present(alertController, animated: true, completion: nil);
     }
-    
+
+
+    //Todo:need to add a duration of event
+    @IBAction func pickDateAction(_ sender: Any) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+            strDate = dateFormatter.string(from: pickerView.date)
+            pickerTextField.text = strDate
+    }
     @IBAction func submitEvent(_ sender: Any) {
         
         //get the values in form and construct JSON
@@ -42,15 +53,28 @@ class PostEventTableViewController: UITableViewController {
         let dateTime = pickerTextField.text
         let location = eventLocation.text
         let zipcode = eventZipcode.text
-        _ = eventURL.text
-        _ = eventDescription.text
+        let url = eventURL.text
+        let description = eventDescription.text
         
         //test if user completed required fields
         if name != "" {
             if dateTime != ""{
                 if location != ""{
                     if zipcode != ""{
-                        print("post json")
+                        let testObject:AnyObject = [
+                            "event_name":name,
+                            "location": location,
+                            "zip_code": zipcode,
+                            "date":"11/16/2016",
+                            "start_time": "12:30",
+                            "end_time": "13:30",
+                            "foods": ["pizza","coke"],
+                            "description":description,
+                            "url": url
+                            ] as AnyObject
+
+                        let valid = JSONSerialization.isValidJSONObject(testObject) // should be true
+                        print(testObject)
                         //post JSON to server
                         
                         //submit success alert and back to main screen
@@ -68,7 +92,7 @@ class PostEventTableViewController: UITableViewController {
     
     
     
-    let foodItems = ["food1","food2","food3","food4","food5"]
+    let foodItems = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +107,17 @@ class PostEventTableViewController: UITableViewController {
         UILabel.appearance(whenContainedInInstancesOf: [UITableViewHeaderFooterView.self])
             .font = UIFont.systemFont(ofSize: 13.0, weight: UIFontWeightMedium)
         //set up date picker for the event time text field
-        let pickerView = UIDatePicker()
+        pickerView = UIDatePicker()
         pickerTextField.inputView = pickerView
     }
+    
+    
+//    var dateFormatter = NSDateFormatter()
+//    dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+//    var strDate = dateFormatter.stringFromDate(myDatePicker.date)
+//    self.selectedDate.text = strDate
+//    
+    
     
     //2 sections in total
     override func numberOfSections(in tableView: UITableView) -> Int {
