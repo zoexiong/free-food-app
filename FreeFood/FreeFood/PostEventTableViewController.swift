@@ -63,7 +63,7 @@ class PostEventTableViewController: UITableViewController {
             if section == 1 {
                 return foodItems.count
             }else{
-                return 7
+                return 8
             }
     }
     
@@ -110,6 +110,11 @@ class PostEventTableViewController: UITableViewController {
             return super.tableView(tableView, indentationLevelForRowAt: indexPath)
         }
     }
+//disable highlight for each row
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //Change the selected background view of the cell.
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

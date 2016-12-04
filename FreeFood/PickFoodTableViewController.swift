@@ -9,9 +9,30 @@
 import UIKit
 
 class PickFoodTableViewController: UITableViewController {
+    
+    
+    @IBAction func save(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: {})
+    }
+    
+    
+    @IBAction func addNewFood(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Add New Food", message: "Food info goes here.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            print("Save")
+
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.allowsMultipleSelection = true
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,7 +50,7 @@ class PickFoodTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,12 +61,14 @@ class PickFoodTableViewController: UITableViewController {
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        cell.textLabel?.text = allFoodItems[indexPath.row]
 
         return cell
     }
-    */
+ */
+ 
+    
 
     /*
     // Override to support conditional editing of the table view.
