@@ -57,7 +57,7 @@ class PostEventTableViewController: UITableViewController {
         return 2
     }
     
-    //the 1st section has 6 rows for basic event info and 1 row to edit food items, the 2nd section (with index 1) has 1 row to dynamically populate multiple rows for a list of food items that the user adds
+    //the 1st section has 7 rows for basic event info and 1 row to edit food items, the 2nd section (with index 1) has 1 row to dynamically populate multiple rows for a list of food items that the user adds
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
             if section == 1 {
