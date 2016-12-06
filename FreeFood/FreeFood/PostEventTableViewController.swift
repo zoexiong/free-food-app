@@ -41,27 +41,29 @@ class PostEventTableViewController: UITableViewController {
     @IBAction func submitEvent(_ sender: Any) {
         //get the values in form and construct JSON
         let name = eventName.text!
-        let dateTime = pickerTextField.text!
         let location = eventLocation.text!
         let zipcode = eventZipcode.text!
         let url = eventURL.text!
         let description = eventDescription.text!
+        let date = String(startDate.characters.prefix(10))
+        let startTime = String(startDate.characters.dropFirst(11))
+        let endTime = String(endDate.characters.dropFirst(11))
         //test if user completed required fields
         if name != "" {
-            if dateTime != ""{
+            if startDate != "" && endDate != ""{
                 if location != "" {
                     if zipcode != "" {
                         if selected.items.count >= 1 {
                             for foodIndex in selected.items{
                                 foodItems.append(foodList.list[foodIndex])
                             }
-                            let eventObject:AnyObject = [
+                            let eventObject: AnyObject = [
                                 "event_name":name ,
                                 "location": location ,
                                 "zip_code": zipcode ,
-                                "date":"11/16/2016",
-                                "start_time": "12:30",
-                                "end_time": "13:30",
+                                "date":date,
+                                "start_time": startTime,
+                                "end_time": endTime,
                                 "foods": foodItems,
                                 "description":description ,
                                 "url": url 
@@ -73,6 +75,16 @@ class PostEventTableViewController: UITableViewController {
                             
                             //submit success alert and back to main screen
                             alert(message: "submit successful", "submitted!")
+                            eventName.text! = ""
+                            pickerTextField.text! = ""
+                            endPickerTextField.text! = ""
+                            eventLocation.text! = ""
+                            eventZipcode.text! = ""
+                            eventURL.text! = ""
+                            eventDescription.text! = ""
+                            foodItems = []
+                            selected.items = []
+                            do_table_refresh()
                         } else{
                             alert(message: "You must enter at least one food item to post the event", "submit failed")
                         }

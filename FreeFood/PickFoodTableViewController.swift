@@ -25,6 +25,13 @@ class PickFoodTableViewController: UITableViewController {
     {
         DispatchQueue.main.async(execute: {
             self.tableView.reloadData()
+            if selected.items != []{
+                for index in selected.items{
+                    print("selected:",index)
+                    self.tableView.selectRow(at: [0,index], animated: true, scrollPosition:UITableViewScrollPosition.none)
+                    print("selected rows are:",self.tableView.indexPathsForSelectedRows ?? [])
+                }
+            }
             return
         })
     }
@@ -37,7 +44,7 @@ class PickFoodTableViewController: UITableViewController {
     
     
     @IBAction func addNewFood(_ sender: Any) {
-        
+        setSelectedItems()
         let alertController = UIAlertController(title: "Add New Food", message: "Please enter new food name.", preferredStyle: UIAlertControllerStyle.alert)
         let newFoodTextField = UITextField()
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
@@ -48,6 +55,7 @@ class PickFoodTableViewController: UITableViewController {
             foodList.list.append(newItem.text!)
             print("Saved")
             print("new item:",newItem.text!)
+            self.tableView.selectRow(at: [0,foodList.list.count-1], animated: true, scrollPosition:UITableViewScrollPosition.none)
             self.do_table_refresh()
         }
         
