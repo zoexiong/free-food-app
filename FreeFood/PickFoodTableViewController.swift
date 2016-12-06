@@ -13,6 +13,14 @@ class PickFoodTableViewController: UITableViewController {
     
     var foodList=["Coke","Cookie","Pizza","Rice","Pasta","Sandwich","Hamburger","Burrito","Salad"]
     
+    func do_table_refresh()
+    {
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+            return
+        })
+    }
+    
     @IBAction func save(_ sender: Any) {
         
         self.dismiss(animated: true, completion: {})
@@ -26,11 +34,14 @@ class PickFoodTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             print("Canceld")
         }
-        let okAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (alert: UIAlertAction!) -> Void in
-            self.foodList.append(newFoodTextField.text!)
+        let okAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
+            let newItem = (alertController.textFields?.first)! as UITextField
+            self.foodList.append(newItem.text!)
             print("Saved")
-            print("new item:",newFoodTextField.text!)
+            print("new item:",newItem.text!)
+            self.do_table_refresh()
         }
+        
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
         alertController.addTextField { (newFoodTextField) -> Void in
