@@ -199,3 +199,12 @@ class PostEventTableViewController: UITableViewController {
     }
 }
 
+class SelectedList {
+    var items : [Int]
+    init(_ items:[Int]){
+        self.items = items
+    }
+}
+
+var selected = SelectedList([])
+

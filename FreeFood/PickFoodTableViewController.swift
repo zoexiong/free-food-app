@@ -9,6 +9,16 @@
 
 import UIKit
 
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
+
 class PickFoodTableViewController: UITableViewController {
     
     var foodList=["Coke","Cookie","Pizza","Rice","Pasta","Sandwich","Hamburger","Burrito","Salad"]
@@ -22,7 +32,7 @@ class PickFoodTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        
+        setSelectedItems()
         self.dismiss(animated: true, completion: {})
     }
     
@@ -56,7 +66,16 @@ class PickFoodTableViewController: UITableViewController {
         
         //create a reuseable cell for each food item displayed in the food list
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "itemCell")
-
+        if selected.items != []{
+            for index in selected.items{
+                print("selected:",index)
+                self.tableView.selectRow(at: [0,index], animated: true, scrollPosition:UITableViewScrollPosition.none)
+                print(tableView.indexPathsForSelectedRows ?? [])
+            }
+        }
+    
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -84,11 +103,23 @@ class PickFoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
         cell.textLabel?.text = foodList[indexPath.row]
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 168, green: 227, blue: 255)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
 
-    
-    
+    func setSelectedItems(){
+        let indexes = tableView.indexPathsForSelectedRows
+        //clear history and save again
+        selected.items = []
+        if indexes != nil{
+            for index in indexes! {
+                selected.items.append(index[1])
+            }
+            print(selected.items)
+        }
+    }
     
     /*
      // Override to support conditional editing of the table view.
