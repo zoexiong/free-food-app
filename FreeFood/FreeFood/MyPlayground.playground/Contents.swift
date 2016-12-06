@@ -2,19 +2,21 @@
 
 import UIKit
 
-var str = "Hello, playground"
+let date1 : NSDate = NSDate() //initialized by default with the current date
+//var date2 = date1.addingTimeInterval(2000)
 
-let savedData = ["Something": 1]
+print(date1)
+//print(date2)
+var date2 = UIDatePicker().date
 
-let jsonObject: [String: AnyObject] = [
-    "type_id": 1 as AnyObject,
-    "model_id": 1 as AnyObject,
-    "transfer": [
-        "startDate": "10/04/2015 12:45",
-        "endDate": "10/04/2015 16:00"
-    ] as AnyObject,
-    "custom": savedData as AnyObject
-]
+let compareResult = date1.compare(date2 as Date)
+if compareResult == ComparisonResult.orderedAscending {
+    print("\(date1) is earlier than \(date2)")
+}
+
+let interval = date1.timeIntervalSince(date2 as Date)
+
+
 
 
 
@@ -29,22 +31,6 @@ let jsonObject: [String: AnyObject] = [
 //    "url": "url_1"
 //    ]as AnyObject) as! [String : AnyObject]
 
-let testObject:AnyObject = [
-    "event_name":"Zillow Info Session",
-    "location": "MGH 142",
-    "zip_code": "98105",
-    "date":"11/16/2016",
-    "start_time": "12:30",
-    "end_time": "13:30",
-    "foods": ["pizza","coke"],
-    "description":"event description",
-    "url": "url_1"
-    ] as AnyObject
-
-let valid = JSONSerialization.isValidJSONObject(testObject) // true
-
-print(testObject)
-//print(testObject.event_0)
 
 //var eventListLink = "https://raw.githubusercontent.com/zoexiong/free-food/Z_branch/FreeFood/events.json"
 //
