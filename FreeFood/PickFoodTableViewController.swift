@@ -21,8 +21,6 @@ extension UIColor {
 
 class PickFoodTableViewController: UITableViewController {
     
-    var foodList=["Coke","Cookie","Pizza","Rice","Pasta","Sandwich","Hamburger","Burrito","Salad"]
-    
     func do_table_refresh()
     {
         DispatchQueue.main.async(execute: {
@@ -33,6 +31,7 @@ class PickFoodTableViewController: UITableViewController {
     
     @IBAction func save(_ sender: Any) {
         setSelectedItems()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationIdentifier"), object: nil)
         self.dismiss(animated: true, completion: {})
     }
     
@@ -46,7 +45,7 @@ class PickFoodTableViewController: UITableViewController {
         }
         let okAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default) { (action: UIAlertAction!) -> Void in
             let newItem = (alertController.textFields?.first)! as UITextField
-            self.foodList.append(newItem.text!)
+            foodList.list.append(newItem.text!)
             print("Saved")
             print("new item:",newItem.text!)
             self.do_table_refresh()
@@ -70,7 +69,7 @@ class PickFoodTableViewController: UITableViewController {
             for index in selected.items{
                 print("selected:",index)
                 self.tableView.selectRow(at: [0,index], animated: true, scrollPosition:UITableViewScrollPosition.none)
-                print(tableView.indexPathsForSelectedRows ?? [])
+                //print(tableView.indexPathsForSelectedRows ?? [])
             }
         }
     
@@ -97,12 +96,12 @@ class PickFoodTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foodList.count
+        return foodList.list.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        cell.textLabel?.text = foodList[indexPath.row]
+        cell.textLabel?.text = foodList.list[indexPath.row]
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor(red: 168, green: 227, blue: 255)
         cell.selectedBackgroundView = bgColorView
@@ -117,7 +116,7 @@ class PickFoodTableViewController: UITableViewController {
             for index in indexes! {
                 selected.items.append(index[1])
             }
-            print(selected.items)
+            //print(selected.items)
         }
     }
     

@@ -9,6 +9,8 @@
 
 import UIKit
 
+    var foodItems = [String]()
+
 class PostEventTableViewController: UITableViewController {
     
     @IBOutlet weak var eventName: UITextField!
@@ -29,8 +31,7 @@ class PostEventTableViewController: UITableViewController {
     var endDate: String=""
     var pickerView = UIDatePicker()
     var endPickerView = UIDatePicker()
-    let foodItems = ["food1","food2","food3","food4","food5"]
-    //let foodItems = [String]()
+    
     var dateFormatter = DateFormatter()
     
     func submitFailedAlert(){
@@ -50,7 +51,10 @@ class PostEventTableViewController: UITableViewController {
             if dateTime != ""{
                 if location != "" {
                     if zipcode != "" {
-                        if foodItems.count >= 1 {
+                        if selected.items.count >= 1 {
+                            for foodIndex in selected.items{
+                                foodItems.append(foodList.list[foodIndex])
+                            }
                             let eventObject:AnyObject = [
                                 "event_name":name ,
                                 "location": location ,
@@ -111,6 +115,15 @@ class PostEventTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil);
     }
     
+    
+    open func do_table_refresh()
+    {
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+            return
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -128,6 +141,12 @@ class PostEventTableViewController: UITableViewController {
         endPickerView = UIDatePicker()
         pickerTextField.inputView = pickerView
         endPickerTextField.inputView = endPickerView
+        do_table_refresh()
+        NotificationCenter.default.addObserver(self, selector: #selector(PostEventTableViewController.updateTable), name:NSNotification.Name(rawValue: "NotificationIdentifier"), object: nil)
+    }
+    
+    func updateTable() {
+        do_table_refresh()
     }
     
     //2 sections in total
@@ -139,7 +158,7 @@ class PostEventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
             if section == 1 {
-                return foodItems.count
+                return selected.items.count
             }else{
                 return 8
             }
@@ -158,7 +177,7 @@ class PostEventTableViewController: UITableViewController {
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
                 
                 //fetch the corresponding name of the food item and populate many rows
-                cell.textLabel?.text = foodItems[indexPath.row]
+                cell.textLabel?.text = foodList.list[selected.items[indexPath.row]]
                 //disable the selected row highlight
                 return cell
             }else{ //for the 1st section (the more static one)
@@ -208,3 +227,27 @@ class SelectedList {
 
 var selected = SelectedList([])
 
+
+
+
+//func updateFoodItems(){
+//    if selected.items != []{
+//        foodItems = []
+//        for index in selected.items{
+//            foodItems.append(foodList.list[index])
+//            print("foodItems:",foodItems)
+//        }
+//    }
+//}
+
+
+class FoodList{
+    var list: [String]
+    init(_ list:[String]){
+        self.list = list
+    }
+}
+
+var foodList = FoodList(["Coke","Cookie","Pizza","Rice","Pasta","Sandwich","Hamburger","Burrito","Salad"])
+
+    
