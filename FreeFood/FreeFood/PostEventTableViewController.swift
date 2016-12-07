@@ -31,7 +31,6 @@ class PostEventTableViewController: UITableViewController {
     var endDate: String=""
     var pickerView = UIDatePicker()
     var endPickerView = UIDatePicker()
-    
     var dateFormatter = DateFormatter()
     
     func submitFailedAlert(){
@@ -165,6 +164,19 @@ class PostEventTableViewController: UITableViewController {
         endPickerView.minimumDate = NSDate() as Date
         pickerTextField.inputView = pickerView
         endPickerTextField.inputView = endPickerView
+        eventName.clearButtonMode = .whileEditing
+        eventZipcode.clearButtonMode = .whileEditing
+        //        eventZipcode.returnKeyType = .next
+        eventURL.clearButtonMode = .whileEditing
+        //        eventURL.returnKeyType = .next
+        eventLocation.clearButtonMode = .whileEditing
+        //        eventLocation.returnKeyType = .next
+        eventDescription.clearButtonMode = .whileEditing
+        
+        
+        //        self.eventLocation.nextField = self.eventZipcode
+        //        self.eventZipcode.nextField = self.eventURL
+        //        self.eventURL.nextField = self.eventDescription
         do_table_refresh()
         NotificationCenter.default.addObserver(self, selector: #selector(PostEventTableViewController.updateTable), name:NSNotification.Name(rawValue: "NotificationIdentifier"), object: nil)
     }
@@ -231,11 +243,11 @@ class PostEventTableViewController: UITableViewController {
             return super.tableView(tableView, indentationLevelForRowAt: indexPath)
         }
     }
-    //disable highlight for each row
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        //Change the selected background view of the cell.
-    //        tableView.deselectRow(at: indexPath, animated: true)
-    //    }
+    //    disable highlight for each row
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Change the selected background view of the cell.
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -272,6 +284,6 @@ class FoodList{
     }
 }
 
-var foodList = FoodList(["Coke","Cookie","Pizza","Rice","Pasta","Sandwich","Hamburger","Burrito","Salad"])
+var foodList = FoodList(["Assorted Desserts","Barbeque","Bread","Burrito","Burger","Cake","Coffee","Coke","Cookie","Donut","Fries","Fruit","Hotdog","Ice Cream","Juice","Muffin","Pasta","Pastry","Pie","Pizza","Rice","Sandwich","Salad","Taco"])
 
     
