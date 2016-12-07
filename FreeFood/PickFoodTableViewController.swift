@@ -25,7 +25,6 @@ class PickFoodTableViewController: UITableViewController {
     {
         DispatchQueue.main.async(execute: {
             self.tableView.reloadData()
-//            self.tableView.selectRow(at: [0,foodList.list.count-1], animated: true, scrollPosition:UITableViewScrollPosition.none)
             if selected.items != []{
                 for index in selected.items{
                     print("selected:",index)
@@ -36,8 +35,14 @@ class PickFoodTableViewController: UITableViewController {
         })
     }
     
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: {})
+    }
+    
     @IBAction func save(_ sender: Any) {
+        //add selected items to selected.items
         setSelectedItems()
+        //dismiss won't lead to view reload, but we need to reload view to refresh the post event table, so this is added to call the do_table_refresh() function inside postEventTableViewController
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationIdentifier"), object: nil)
         self.dismiss(animated: true, completion: {})
     }
@@ -46,7 +51,6 @@ class PickFoodTableViewController: UITableViewController {
     @IBAction func addNewFood(_ sender: Any) {
         setSelectedItems()
         let alertController = UIAlertController(title: "Add New Food", message: "Please enter new food name.", preferredStyle: UIAlertControllerStyle.alert)
-        let newFoodTextField = UITextField()
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             print("Canceld")
         }
@@ -73,6 +77,8 @@ class PickFoodTableViewController: UITableViewController {
         
         //create a reuseable cell for each food item displayed in the food list
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "itemCell")
+        
+        // if already selected some food items, show them in the tableView
         if selected.items != []{
             for index in selected.items{
                 print("selected:",index)
@@ -81,7 +87,7 @@ class PickFoodTableViewController: UITableViewController {
             }
         }
     
-        
+        navigationController?.setToolbarHidden(false, animated: false)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -118,7 +124,7 @@ class PickFoodTableViewController: UITableViewController {
 
     func setSelectedItems(){
         let indexes = tableView.indexPathsForSelectedRows
-        //clear history and save again
+        //clear history and then save
         selected.items = []
         if indexes != nil{
             for index in indexes! {

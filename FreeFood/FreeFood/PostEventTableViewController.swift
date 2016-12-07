@@ -87,6 +87,8 @@ class PostEventTableViewController: UITableViewController {
                                 eventDescription.text! = ""
                                 foodItems = []
                                 selected.items = []
+                                startDate = ""
+                                endDate = ""
                                 do_table_refresh()
                             }else{
                                 alert(message: "The end time must be later than start time", "submit failed")

@@ -2,19 +2,7 @@
 
 import UIKit
 
-let date1 : NSDate = NSDate() //initialized by default with the current date
-//var date2 = date1.addingTimeInterval(2000)
 
-print(date1)
-//print(date2)
-var date2 = UIDatePicker().date
-
-let compareResult = date1.compare(date2 as Date)
-if compareResult == ComparisonResult.orderedAscending {
-    print("\(date1) is earlier than \(date2)")
-}
-
-let interval = date1.timeIntervalSince(date2 as Date)
 
 
 
